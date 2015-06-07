@@ -73,7 +73,7 @@ foreach_device:
     in      eax, dx   ; get headerType from configuration space into EAX // 4 bytes
 
     cmp     ax,  0ffffh      ; "-1" -- if device NOT exists
-    je      terminate        ;                         exit
+    je      next_device        ;                         check next
 
     xor     di,  di
     xor     ebx, ebx
